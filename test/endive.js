@@ -3,9 +3,9 @@ var should = require( 'should' );
 var mockBase = process.cwd() + '/test';
 
 describe( 'endive' , function() {
-    describe( '#createApp' , function() {
+    describe( '#endive' , function() {
         it( 'should create and get app, be the same instance' , function( done ) {
-            var app = endive.createApp ( { base: mockBase } );
+            var app = endive( { base: mockBase } );
             should.exist ( app );
 
             var testApp = endive.app;

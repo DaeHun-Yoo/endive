@@ -1,7 +1,11 @@
 {
   "name": "endive",
   "version": "0.0.1",
-  "author": { "name": "yo2dh"},
+  "description": "A distributed communication framework",
+  "author": {
+    "name": "yo2dh",
+    "email": "yo2dh@naver.com"
+  },
   "private": false,
   "homepage": "https://github.com/yo2dh/endive",
   "repository": {
@@ -17,7 +21,7 @@
       "url": "https://github.com/yo2dh/endive#license"
     }
   ],
- "keywords": [
+  "keywords": [
     "endive",
     "framework",
     "web",
@@ -25,6 +29,7 @@
     "server"
   ],
   "dependencies": {
+    "dnode": "1.1.0",
     "socket.io": "0.9.16",
     "async": "0.2.5",
     "seq-queue": "0.0.5",
@@ -38,7 +43,7 @@
     "endive": "./bin/endive"
   },
   "devDependencies": {
-    "should": ">=0.0.1",
+    "should": "~2.1.0",
     "mocha": ">=0.0.1",
     "socket.io-client": ">=0.0.1",
     "jscoverage": ">=0.0.1",
