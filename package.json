@@ -1,0 +1,47 @@
+{
+  "name": "endive",
+  "version": "0.0.1",
+  "author": { "name": "yo2dh"},
+  "private": false,
+  "homepage": "https://github.com/yo2dh/endive",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yo2dh/endive.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yo2dh/endive/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/yo2dh/endive#license"
+    }
+  ],
+ "keywords": [
+    "endive",
+    "framework",
+    "web",
+    "realtime",
+    "server"
+  ],
+  "dependencies": {
+    "socket.io": "0.9.16",
+    "async": "0.2.5",
+    "seq-queue": "0.0.5",
+    "crc": "0.2.0",
+    "cliff": "0.1.8",
+    "mkdirp": "0.3.3",
+    "ws": "0.4.25",
+    "node-bignumber": "1.2.1"
+  },
+  "bin": {
+    "endive": "./bin/endive"
+  },
+  "devDependencies": {
+    "should": ">=0.0.1",
+    "mocha": ">=0.0.1",
+    "socket.io-client": ">=0.0.1",
+    "jscoverage": ">=0.0.1",
+    "muk": ">=0.0.1"
+  }
+}
