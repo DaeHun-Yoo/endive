@@ -37,7 +37,8 @@
     "cliff": "0.1.8",
     "mkdirp": "0.3.3",
     "ws": "0.4.25",
-    "node-bignumber": "1.2.1"
+    "node-bignumber": "1.2.1",
+    "hashish": "0.0.4"
   },
   "bin": {
     "endive": "./bin/endive"
