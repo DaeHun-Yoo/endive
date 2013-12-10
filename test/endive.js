@@ -2,12 +2,14 @@ var endive = require( '../' );
 var should = require( 'should' );
 var dnode = require( 'dnode' );
 
-var mockBase = process.cwd() + '/test';
+var testBase = process.cwd() + '/test';
 
 describe( 'endive' , function() {
     describe( '#endive' , function() {
         it( 'should create and get app, be the same instance' , function( done ) {
-            var app = endive( { base: mockBase } );
+            var app = endive( { base: testBase ,
+                                operationMode: 'debug'
+            } );
             should.exist ( app );
 
             var testApp = endive.app;
@@ -19,13 +21,15 @@ describe( 'endive' , function() {
 
     describe( '#start' , function() {
         it( 'should start and stop successfully' , function( done ) {
-            var app = endive( { base: mockBase } );
+            var app = endive( { base: testBase ,
+                                operationMode: 'debug' ,
+                                useConfigFile: false
+            });
             should.exist ( app );
 
-            app.init();
-            app.addWebConnectorServer ( 3200 );
-            app.addRoomManagerConfig( 3300 );
-            app.addRoomConfig( 3400 );
+            app.addConnectorServer( 'connector-server-1' , 3200 );
+            app.addRoomManager( 'room-manager-1' , 3300 );
+            app.addRoomServer( 'room-server-1' , 3400 );
 
             app.start();
             app.stop();
@@ -33,6 +37,18 @@ describe( 'endive' , function() {
         })
     })
 
+    describe( '#start with config files' , function() {
+        it( 'should start and stop successfully' , function( done ) {
+            var app = endive( { base: testBase ,
+                                operationMode: 'debug' ,
+            });
+            should.exist ( app );
+
+            app.start();
+            app.stop();
+            done();
+        })
+    })
 
     describe( '#test' , function() {
         it( 'is just test.' , function( done ) {

@@ -1,0 +1,9 @@
+{
+    "debug": [
+        { "id": "connector-server-1", "host": "127.0.0.1", "port": 3005 }
+    ],
+
+    "release": [
+        { "id": "connector-server-1", "host": "127.0.0.1", "port": 3005 }
+    ]
+}
