@@ -68,7 +68,7 @@ describe( 'endive' , function() {
             var r;
             var d = dnode ( { 'id': 'test' } ).connect ( 3005 , '127.0.0.1' , function ( remote ) { r = remote } );
             d.stream.on ( 'connect' , function() {
-                console.log( 'DnodeConnector connected: 127.0.0.1:3005' );
+                console.log( 'DNodeConnector connected: 127.0.0.1:3005' );
             });
             d.on ( 'remote' , function ( remote , conn ) {
 //                conn.address();
