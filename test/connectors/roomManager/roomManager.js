@@ -7,16 +7,17 @@ describe( '#RoomManager' , function() {
         var i = 0;
         var rmId = [];
         var rm = [];
-        for ( i = 0 ; i < 3 ; i++ )
-        {
-            var r = new RoomManager( 'RoomManager-' + (i+1) , 3301 + i );
-            r.addRemoteRoomManager( 'RoomManager-' + ((i+1) % 3) + 1 , '127.0.0.1' , ports[i] );
-            rm.push ( r );
-            r.start();
-        }
         var ports = [ 3302 , 3303 , 3301 ];
         for ( i = 0 ; i < 3 ; i++ )
         {
+            var r = new RoomManager( 'RoomManager-' + (i+1) , 3301 + i );
+            r.addRemoteRoomManager( 'RoomManager-' + (((i+1) % 3) + 1) , '127.0.0.1' , ports[i] );
+            rm.push ( r );
+            r.start();
+        }
+        for ( i = 0 ; i < 3 ; i++ )
+        {
+            rm[i].stop();
         }
         setTimeout ( function() {
             done();
